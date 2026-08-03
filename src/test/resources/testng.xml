@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="OrangeHRMSuite" parallel="classes" thread-counts="2" verbose="1">
+    <test name="OrangeHRMTest">
+        <parameter name = "browser" value = "${browser}"/>
+        <parameter name = "isLambdaTest" value = "${isLambdaTest}"/>
+        <parameter name = "isHeadless" value = "${isHeadless}"/>
+
+        <classes>
+            <class name ="com.orangehrm.ui.test.LoginTest"/>
+            <class name ="com.orangehrm.ui.test.LoginCsvTest"/>
+            <class name ="com.orangehrm.ui.test.LoginDataProvidersTest"/>
+            <class name ="com.orangehrm.ui.test.LoginExcelTest"/>
+        </classes>
+    </test>
+</suite>

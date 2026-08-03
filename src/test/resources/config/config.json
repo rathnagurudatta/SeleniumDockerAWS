@@ -1,0 +1,14 @@
+{
+  "environments": {
+    "qa": {
+      "url": "https://www.saucedemo.com/",
+      "max_number_of_attempts" : 3
+    },
+    "dev": {
+      "url": "https://www.saucedemo.com/",
+      "max_number_of_attempts" : 3
+    }
+  }
+
+
+}
