@@ -35,8 +35,16 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: Build with Maven
-        run: mvn test -X -Dbrowser=chrome -DisLambdaTest=false -DisHeadless=true
+      - name: Run Tests
+        run: |
+          java -version
+          mvn -version
+          google-chrome --version
+
+          mvn clean test \
+            -Dbrowser=chrome \
+            -DisLambdaTest=false \
+            -DisHeadless=true
 
       - name: Archive Logs
         if: always()   # This ensures logs are saved even if the tests fail
