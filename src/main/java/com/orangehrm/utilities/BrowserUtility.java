@@ -40,13 +40,17 @@ public abstract class BrowserUtility {
 
     public BrowserUtility(Browser browserName, boolean isHeadless){
         if(browserName == CHROME){
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--window-size=1920,1080");
             if(isHeadless) {
-                ChromeOptions options = new ChromeOptions();
-                options.addArguments("--headless=old");
-                options.addArguments("--window-size = 1920,1080");
+                options.addArguments("--headless=new");
+//                options.addArguments("--headless=old");
+//                options.addArguments("--window-size = 1920,1080");
                 driver.set(new ChromeDriver(options));
             }else{
-                driver.set(new ChromeDriver());
+                driver.set(new ChromeDriver(options));
             }
 
         }else if(browserName == EDGE){
