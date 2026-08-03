@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="OrangeHRMSuite" thread-count="2" verbose="1">
+<suite name="OrangeHRMSuite" parallel="classes" thread-count="2" verbose="1">
     <test name="OrangeHRMTest">
         <parameter name = "browser" value = "${browser}"/>
         <parameter name = "isLambdaTest" value = "${isLambdaTest}"/>
