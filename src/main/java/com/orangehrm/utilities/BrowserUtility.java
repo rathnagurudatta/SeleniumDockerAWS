@@ -44,6 +44,9 @@ public abstract class BrowserUtility {
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
             options.addArguments("--window-size=1920,1080");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-gpu");
+            options.addArguments("--remote-debugging-port=9222");
             if(isHeadless) {
                 options.addArguments("--headless=new");
 //                options.addArguments("--headless=old");
