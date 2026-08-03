@@ -47,14 +47,13 @@ public abstract class BrowserUtility {
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-gpu");
             options.addArguments("--remote-debugging-port=9222");
+
             if(isHeadless) {
                 options.addArguments("--headless=new");
-//                options.addArguments("--headless=old");
-//                options.addArguments("--window-size = 1920,1080");
-                driver.set(new ChromeDriver(options));
-            }else{
-                driver.set(new ChromeDriver(options));
             }
+
+            driver.set(new ChromeDriver(options));
+
 
         }else if(browserName == EDGE){
             if(isHeadless) {

@@ -28,12 +28,15 @@ public class TestBase {
     public void setup(@Optional("chrome") String browser, @Optional("false")boolean isLambdaTest, @Optional("false")boolean isHeadless, Method method) throws MalformedURLException {
         this.isLambdaTest = isLambdaTest;
         WebDriver lambdaDriver;
+        System.out.println("Browser      : " + browser);
+        System.out.println("LambdaTest   : " + isLambdaTest);
+        System.out.println("Headless     : " + isHeadless);
     if(isLambdaTest){
         lambdaDriver = LambdaTestUtility.initializeLambdaTestSession(browser, method.getName());
         loginPage = new LoginPage(lambdaDriver);
     }else{
         //Running test on local machine
-        loginPage = new LoginPage(Browser.valueOf(browser.toUpperCase()), false);
+        loginPage = new LoginPage(Browser.valueOf(browser.toUpperCase()), isHeadless);
     }
 
     }
